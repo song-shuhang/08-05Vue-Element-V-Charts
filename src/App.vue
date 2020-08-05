@@ -1,36 +1,33 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <div>
-      <p>
-        If Element is successfully added to this project, you'll see an
-        <code v-text="'<el-button>'"></code>
-        below
-      </p>
-      <el-button>el-button</el-button>
+    <div id="box1">
+      <LeftMenu/>
     </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div id="box2"> 
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
+<script type="text/ecmascript-6">
+import LeftMenu from "./components/LeftMenu";
+  export default {
+    name:'App',
+    components:{
+      LeftMenu
+    }
   }
-}
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped lang="stylus" rel="stylesheet/stylus">
+#app
+ width 100%
+ height 100%
+ display flex 
+ #box1
+  width 200px
+  height 100%
+ #box2
+  width calc(100% - 200px)
+    
 </style>
